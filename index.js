@@ -10,7 +10,7 @@ app.set('views','views');
 
 const path = require('path');
 
-app.use(express.static(path.join(__dirname,'bower_components')));
+app.use(express.static(path.join(__dirname,'public')));
 
 const port = process.env.PORT||3000;
 
