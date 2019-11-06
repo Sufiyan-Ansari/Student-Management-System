@@ -14,9 +14,9 @@ app.use(express.static(path.join(__dirname,'public')));
 
 const port = process.env.PORT||3000;
 
-app.get('/',(req,res,next)=>{
-    res.render('Add-Student');
-});
+const adminRouter = require('./route/adminRoute');
+
+app.use('/admin',adminRouter);
 
 app.listen(port,()=>{
     console.log(`Listening on port ${port}`);
