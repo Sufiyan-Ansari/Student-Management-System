@@ -4,6 +4,6 @@ const Router = express.Router();
 
 const adminController = require('../controller/adminController');
 
-Router.get('/',adminController.GetAddStudentAdmin);
+Router.get('/Add-New-Student',adminController.GetAddStudentAdmin);
 
 module.exports = Router;
