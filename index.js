@@ -16,7 +16,12 @@ const port = process.env.PORT||3000;
 
 const adminRouter = require('./route/adminRoute');
 
+const PageNotFound = require('./controller/PageNotFound');
+
 app.use('/admin',adminRouter);
+
+app.use(PageNotFound.GetPageNotFound);
+
 
 app.listen(port,()=>{
     console.log(`Listening on port ${port}`);
