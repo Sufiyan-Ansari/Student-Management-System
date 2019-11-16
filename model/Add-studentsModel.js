@@ -1,9 +1,9 @@
-const StudentArray = [];
+const getDb = require('../util/database').getDb;
 module.exports = class Student
 {
-    constructor(studentName,fatherName,homeAddress,phoneNumber,homePhone)
+    constructor(student_name,fatherName,homeAddress,phoneNumber,homePhone)
     {
-        this.studentName = studentName;
+        this.student_name = student_name;
         this.fatherName = fatherName;
         this.Home_Address = homeAddress;
         this.phone_number = phoneNumber;
@@ -12,7 +12,6 @@ module.exports = class Student
     }
     save()
     {
-        StudentArray.push(this);
-        console.log(StudentArray);
+        
     }
 }

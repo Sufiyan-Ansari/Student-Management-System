@@ -18,11 +18,17 @@ const adminRouter = require('./route/adminRoute');
 
 const PageNotFound = require('./controller/PageNotFound');
 
-app.use('/admin',adminRouter);
+const mongoConnect = require('./util/database').mongoConnect;
+
+app.use('/',adminRouter);
 
 app.use(PageNotFound.GetPageNotFound);
 
 
-app.listen(port,()=>{
-    console.log(`Listening on port ${port}`);
-})
+// app.listen(port,()=>{
+//     console.log(`Listening on port ${port}`);
+// })
+
+mongoConnect(() => {
+    app.listen(3000);
+});

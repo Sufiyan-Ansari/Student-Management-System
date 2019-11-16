@@ -10,9 +10,13 @@ const PageNotFoundController = require('../controller/PageNotFound');
 
 Router.use(bodyparser.urlencoded({extended:false}));
 
-Router.get('/Add-New-Student',adminController.GetAddStudentAdmin);
+//console.log('Reached in admin Router');
 
-Router.post('/Add-New-Student',adminController.PostAddStudentAdmin);
+Router.get('/',adminController.GetAddStudentAdmin);
+
+//console.log('Got Add-new-Student Page');
+
+Router.post('/',adminController.PostAddStudentAdmin);
 
 
 
