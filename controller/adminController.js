@@ -16,5 +16,9 @@ exports.PostAddStudentAdmin = (req,res,next)=>{
     const student = new Student(Student_name,Father_name,home_address,phone_number,home_phone,b_form);
     student.save();
   //  console.log('Reached in admin Controller');
+  res.render('Add-Student',
+  {
+      pageTitle:'Add New Student ::'
+  });
     
 }

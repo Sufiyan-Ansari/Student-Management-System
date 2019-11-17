@@ -12,11 +12,11 @@ Router.use(bodyparser.urlencoded({extended:false}));
 
 //console.log('Reached in admin Router');
 
-Router.get('/',adminController.GetAddStudentAdmin);
+Router.get('/add-students',adminController.GetAddStudentAdmin);
 
 //console.log('Got Add-new-Student Page');
 
-Router.post('/',adminController.PostAddStudentAdmin);
+Router.post('/add-students',adminController.PostAddStudentAdmin);
 
 
 

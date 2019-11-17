@@ -12,6 +12,15 @@ module.exports = class Student
     }
     save()
     {
-        
+        const db = getDb();
+        db.collection('Students').insertOne(this)
+        .then(result => 
+            {
+                console.log(result);
+            }).catch(err => 
+            {
+                console.log(err);
+            });
+
     }
 }

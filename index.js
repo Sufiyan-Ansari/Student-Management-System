@@ -20,7 +20,7 @@ const PageNotFound = require('./controller/PageNotFound');
 
 const mongoConnect = require('./util/database').mongoConnect;
 
-app.use('/',adminRouter);
+app.use('/admin',adminRouter);
 
 app.use(PageNotFound.GetPageNotFound);
 
