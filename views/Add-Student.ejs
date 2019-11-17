@@ -16,6 +16,9 @@
         let hPhoneNumber = document.getElementById('Home-phone');
     
     }
+    //let date = document.getElementById('date');
+    
+
     </script>
      <link  rel="stylesheet" href="/css/bootstrap.min.css">
       
@@ -62,6 +65,8 @@
 
                 <div class="container">
                     <input type="submit" class="btn btn-info btn-lg" id="submitButton" onclick="EmptyValidation()">
+                    <label for="date" id="date" ><script>let Datee = new Date();
+                        document.getElementById('date').innerHTML= Datee.getMinutes();</script></label>
                 </div>
 
 
