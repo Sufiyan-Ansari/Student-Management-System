@@ -22,3 +22,15 @@ exports.PostAddStudentAdmin = (req,res,next)=>{
   });
     
 }
+
+exports.GetStudentsAdmin = (req,res,next) =>{
+    Student.fetchAll()
+    .then(students => {
+        res.render('students',
+        {
+            pageTitle:'Students ::',
+            Stu : students
+        });
+    })
+    .catch(error => {console.log(error);})
+}

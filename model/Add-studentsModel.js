@@ -1,13 +1,14 @@
 const getDb = require('../util/database').getDb;
 module.exports = class Student
 {
-    constructor(student_name,fatherName,homeAddress,phoneNumber,homePhone)
+    constructor(student_name,fatherName,homeAddress,phoneNumber,homePhone,B_form)
     {
         this.student_name = student_name;
         this.fatherName = fatherName;
         this.Home_Address = homeAddress;
         this.phone_number = phoneNumber;
         this.Home_phone = homePhone;
+        this.B_form = B_form;
         
     }
     save()
@@ -22,5 +23,18 @@ module.exports = class Student
                 console.log(err);
             });
 
+    }
+
+    static fetchAll()
+    {
+        const db = getDb();
+        return db.collection('Students')
+        .find()
+        .toArray()
+        .then(student => {
+            console.log(student);
+            return student;
+        })
+        .catch(error => { console.log(error); })
     }
 }
