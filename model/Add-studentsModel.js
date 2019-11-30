@@ -1,4 +1,5 @@
 const getDb = require('../util/database').getDb;
+const fs = require('fs');
 module.exports = class Student
 {
     constructor(student_name,fatherName,homeAddress,phoneNumber,homePhone,B_form)
@@ -33,7 +34,14 @@ module.exports = class Student
         .toArray()
         .then(student => {
             console.log(student);
+            
             return student;
+            fs.writeFileSync('test.json',JSON.stringify(student),(error)=>{
+                if(error)
+                {
+                    console.log(error);
+                }
+            })
         })
         .catch(error => { console.log(error); })
     }

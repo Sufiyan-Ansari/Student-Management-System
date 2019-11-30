@@ -10,7 +10,8 @@
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "mongodb": "^3.3.4",
-    "nodemon": "^1.19.4"
+    "nodemon": "^1.19.4",
+    "pm2": "^4.2.0"
   },
   "devDependencies": {},
   "scripts": {
