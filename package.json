@@ -10,6 +10,8 @@
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "mongodb": "^3.3.4",
+    "mongoose": "^5.7.13",
+    "mongose": "0.0.2-security",
     "nodemon": "^1.19.4",
     "pm2": "^4.2.0"
   },

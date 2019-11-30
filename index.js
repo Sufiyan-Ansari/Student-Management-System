@@ -10,6 +10,8 @@ app.set('views','views');
 
 const path = require('path');
 
+const mongoose = require('mongoose');
+
 app.use(express.static(path.join(__dirname,'public')));
 
 const port = process.env.PORT||3000;
@@ -29,6 +31,14 @@ app.use(PageNotFound.GetPageNotFound);
 //     console.log(`Listening on port ${port}`);
 // })
 
-mongoConnect(() => {
-    app.listen(3000);
+// mongoConnect(() => {
+//     app.listen(3000);
+// });
+mongoose.connect('mongodb+srv://Sufiyan:o0dmignECqGhQkCa@student-o5coo.mongodb.net/Student?retryWrites=true&w=majority')
+.then(result => {
+    app.listen(port)
+})
+.catch(error => {
+    console.log(error);
 });
+
