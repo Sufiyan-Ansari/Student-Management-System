@@ -20,6 +20,7 @@
             <th scope="col">Phone Number</th>
             <th scope="col">Home Phone</th>
             <th scope="col">B-Form</th>
+            <th scope="col">Actions</th>
           </tr>
           
         </thead>
@@ -27,13 +28,18 @@
                 <% if(Stu.length > 0) { for(let s of Stu) { %>
           <tr>
                 
-            <th scope="row"><%= s.student_name %></th>
+            <th scope="row"><%= s.StudentName %></th>
             
-            <td><%= s.fatherName %></td>
-            <td><%= s.Home_Address %></td>
-            <td><%= s.phone_number %></td>
-            <td><%= s.Home_phone %></td>
+            <td><%= s.FatherName %></td>
+            <td><%= s.HomeAddress %></td>
+            <td><%= s.PhoneNumber %></td>
+            <td><%= s.HomePhone %></td>
             <td><%= s.B_form %></td>
+            <td>
+              <form action="/admin/student/<%= s._id %>" method="GET">
+              <button>Details</button>
+              </form>
+            </td>
             
             
           </tr>

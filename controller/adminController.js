@@ -13,9 +13,20 @@ exports.PostAddStudentAdmin = (req,res,next)=>{
     const phone_number = req.body.phone_number;
     const home_phone = req.body.home_phone;
     const b_form = req.body.b_form;
-    const student = new Student(Student_name,Father_name,home_address,phone_number,home_phone,b_form);
-    student.save();
-  //  console.log('Reached in admin Controller');
+    
+    const student = new Student({StudentName:Student_name,
+        FatherName:Father_name,
+        HomeAddress:home_address,
+        PhoneNumber:phone_number,
+        HomePhone:home_phone,
+        B_form:b_form
+                                });
+    student.save().then(
+        result => {
+            console.log('Student Added');
+            res.redirect('/admin/Studentss');
+        }
+    );
   res.render('Add-Student',
   {
       pageTitle:'Add New Student ::'
@@ -24,13 +35,30 @@ exports.PostAddStudentAdmin = (req,res,next)=>{
 }
 
 exports.GetStudentsAdmin = (req,res,next) =>{
-    Student.fetchAll()
+    Student.find()
     .then(students => {
+        console.log(students)
         res.render('students',
         {
+            
             pageTitle:'Students ::',
             Stu : students
         });
     })
     .catch(error => {console.log(error);})
+}
+
+
+exports.GetStudedent = (req,res,next)=>
+{
+    const Student_id = req.params._id;
+    Student.findById(Student_id)
+    .then(student =>{
+       // console.log(Student_id);
+        res.render('student',{pageTitle:student.StudentName , SI : student});
+
+    })
+    .catch(error => {
+        console.log(error);
+    })
 }

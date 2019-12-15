@@ -20,6 +20,8 @@ Router.post('/add-students',adminController.PostAddStudentAdmin);
 
 Router.get('/students',adminController.GetStudentsAdmin);
 
+Router.get('/student/:_id',adminController.GetStudedent),
+
 
 
 module.exports = Router;
