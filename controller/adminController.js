@@ -62,3 +62,13 @@ exports.GetStudedent = (req,res,next)=>
         console.log(error);
     })
 }
+
+///Login Controller
+
+exports.GeTLogin = (req,res,next)=>
+{
+    req.session.isLoggedIn = true;
+    res.render('login', {
+        PageTitle : 'Login :: '
+    });
+}

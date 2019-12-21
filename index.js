@@ -8,11 +8,18 @@ app.set('view engine','ejs');
 
 app.set('views','views');
 
+const session = require('express-session');
+
+
+
+
 const path = require('path');
 
 const mongoose = require('mongoose');
 
 app.use(express.static(path.join(__dirname,'public')));
+
+app.use(session({secret:'Student Management System',resave:false,saveUninitialized:false}))
 
 const port = process.env.PORT||3000;
 

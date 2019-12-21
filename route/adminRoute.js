@@ -22,6 +22,9 @@ Router.get('/students',adminController.GetStudentsAdmin);
 
 Router.get('/student/:_id',adminController.GetStudedent),
 
+/////////Login query
+
+Router.get('/login',adminController.GeTLogin);
 
 
 module.exports = Router;
